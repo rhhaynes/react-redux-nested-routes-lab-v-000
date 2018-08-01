@@ -5,23 +5,18 @@ import { addPet } from '../actions';
 class PetsNew extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: '',
-      description: '',
-    };
+    this.state = {name: '', description: ''};
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const { addPet, history } = this.props
+    const { addPet, history } = this.props;
     addPet(this.state);
     history.push('/pets');
   }
 
   handleOnChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
+    this.setState({[event.target.name]: event.target.value});
   }
 
   render() {
